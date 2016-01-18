@@ -56,4 +56,5 @@ HEADERS += \
     pool_send.h \
     widget.h \
     opj_encode.h \
-    jpeg_encode.h
+    jpeg_encode.h \
+    utils/thread_pool.h

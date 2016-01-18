@@ -21,35 +21,6 @@
 
 #include "asf_stream.h"
 
-template< int C >
-class thread_pool{
-public:
-	class thread_one{
-	public:
-		boost::thread thread;
-		bool done;
-		std::atomic_bool doit;
-
-		thread_one(){
-			done = false;
-			doit = false;
-			thread = boost::thread(boost::bind(&thread_one::run, this));
-		}
-		void run(){
-			while(!done){
-				if(doit){
-
-				}else{
-					_msleep(2);
-				}
-			}
-		}
-		void close(){
-			done = true;
-		}
-	};
-};
-
 struct Frame{
 	Frame();
 	Frame(const cv::Mat& mat);
